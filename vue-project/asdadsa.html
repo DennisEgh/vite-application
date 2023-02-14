@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <title>TV Serier</title>
+    <meta content="initial-scale=1, width=device-width" name="viewport" />
+  </head>
+  <body>
+    <div id="app">
+      <div v-if="movie !== null">
+        <template v-for="movie in movies">
+          <dt>{{ movie.name }}</dt>
+          <dd>{{ movie.overview }}</dd>
+        </template>
+      </div>
+
+      <p v-else>Laddar...</p>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

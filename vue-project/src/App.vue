@@ -1,23 +1,10 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterView } from 'vue-router'
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/Pages/1">Page 1</RouterLink>
-        <RouterLink to="/Pages/2">Page 2</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+<RouterView />
 </template>
 
 <style scoped>
