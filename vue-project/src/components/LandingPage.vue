@@ -5,7 +5,13 @@ import { ref } from 'vue'
 
 const planetsData = ref(null)
 
-    
+
+
+
+
+
+
+
     axios.get("https://swapi.tech/api/planets/").then((resp) => {
         planetsData.value = resp.data;
     });
@@ -17,9 +23,9 @@ console.log(planetsData)
 <template>
   
 
-  <NavigationBar></NavigationBar>
+  <NavigationBar v-if="planetsData"></NavigationBar>
+  <h1 v-else >{{ $route.params.id }}</h1>
   <section id="landing">
-    <h1>{{ $route.params.id }}</h1>
   </section>
 </template>
 
