@@ -15,7 +15,7 @@ console.log(planetsData)
 </script>
 
 <template>
-  <h1>{{ planetsData.results[0].url }}</h1>
+  
 
   <NavigationBar></NavigationBar>
   <section id="landing">
