@@ -33,10 +33,11 @@ console.log(weathersData);
 </template>
 
 <style scoped>
-.myVideo,
-video {
+#myVideo,
+.video {
   position: absolute;
 }
+
 #landing {
   height: 100vh;
   width: 100vw;
