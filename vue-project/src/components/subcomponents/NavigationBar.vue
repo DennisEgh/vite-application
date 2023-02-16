@@ -1,27 +1,32 @@
 <script setup>
 import { RouterLink } from "vue-router";
-</script>
 
+
+defineProps({
+  dayGreeting: {
+    type: String,
+    required: true
+  }
+})
+</script>
 
 <template>
   <div class="navigation">
+    <span> {{ dayGreeting }}</span>
     <nav>
-    
         <div class="nav__logo--container">
             
-            <RouterLink  class="nav__link" to="/Home">
-                <img 
-                class="nav__logo"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/SpaceX_logo_black.svg/2560px-SpaceX_logo_black.svg.png"
-                alt=""
-                />
-            </RouterLink>
-        </div>
+            <RouterLink class="nav__link" to="/Home">
+          <img
+            class="nav__logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/SpaceX_logo_black.svg/2560px-SpaceX_logo_black.svg.png"
+            alt=""
+          />
+        </RouterLink>
+      </div>
     </nav>
-</div>
-<header>
-    <div class="header__container"></div>
-  </header>
+  </div>
+  
 </template>
 
 <style scoped>
@@ -30,7 +35,6 @@ import { RouterLink } from "vue-router";
   z-index: 9999;
   position: absolute;
   width: 100%;
-  height: 80px;
   padding: 20px;
 }
 nav {
@@ -38,7 +42,6 @@ nav {
   justify-content: center;
   height: 100%;
   width: 100%;
-
 }
 .nav__link {
   color: rgb(0, 0, 0);
@@ -48,10 +51,12 @@ nav {
 }
 .nav__logo--container {
   height: 100px;
+  left: 30px;
 }
 .nav__logo {
   height: 50px;
   width: 300px;
+  position: relative;
 }
 
 </style>
