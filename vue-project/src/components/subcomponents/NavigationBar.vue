@@ -2,34 +2,43 @@
 import { RouterLink } from "vue-router";
 </script>
 
+
 <template>
   <div class="navigation">
     <nav>
-      <RouterLink class="nav__link" to="/Pages/Films">Films</RouterLink>
-      <RouterLink class="nav__link" to="/Pages/People">People</RouterLink>
-      <RouterLink class="nav__link" to="/Pages/Planets">Planets</RouterLink>
-      <RouterLink class="nav__link" to="/Pages/Species">Species</RouterLink>
-      <RouterLink class="nav__link" to="/Pages/Starships">Starships</RouterLink>
-      <RouterLink class="nav__link" to="/Pages/Vehicles">Vehicles</RouterLink>
+    
+        <div class="nav__logo--container">
+            
+            <RouterLink  class="nav__link" to="/Home">
+                <img 
+                class="nav__logo"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/SpaceX_logo_black.svg/2560px-SpaceX_logo_black.svg.png"
+                alt=""
+                />
+            </RouterLink>
+        </div>
     </nav>
-  </div>
+</div>
+<header>
+    <div class="header__container"></div>
+  </header>
 </template>
 
 <style scoped>
 .navigation {
   display: flex;
-  justify-content: center;
   z-index: 9999;
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  padding: 20px;
 }
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  height: 100%;
   width: 100%;
-  max-width: 1400px;
-  height: 80px;
-  position: absolute;
-  
-  padding: 20px;
+
 }
 .nav__link {
   color: rgb(0, 0, 0);
@@ -37,4 +46,12 @@ nav {
   font-weight: 600;
   font-size: 24px;
 }
+.nav__logo--container {
+  height: 100px;
+}
+.nav__logo {
+  height: 50px;
+  width: 300px;
+}
+
 </style>

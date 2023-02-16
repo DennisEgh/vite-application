@@ -1,31 +1,28 @@
 <script setup>
 import NavigationBar from "../components/subcomponents/NavigationBar.vue";
 import axios from "axios";
-import { ref } from 'vue'
+import { ref } from "vue";
 
-const planetsData = ref(null)
+const planetsData = ref(null);
 
+axios.get("https://swapi.tech/api/planets/").then((resp) => {
+  planetsData.value = resp.data;
+});
 
-
-
-
-
-
-
-    axios.get("https://swapi.tech/api/planets/").then((resp) => {
-        planetsData.value = resp.data;
-    });
-
-
-console.log(planetsData)
+console.log(planetsData);
 </script>
 
 <template>
-  
+  <NavigationBar></NavigationBar>
 
-  <NavigationBar v-if="planetsData"></NavigationBar>
-  <h1 v-else >{{ $route.params.id }}</h1>
   <section id="landing">
+    <video autoplay muted loop id="myVideo">
+      <source
+        class="video"
+        src="../assets/videoplayback.mp4"
+        type="video/mp4"
+      />
+    </video>
   </section>
 </template>
 
@@ -34,4 +31,5 @@ console.log(planetsData)
   height: 100vh;
   width: 100vw;
 }
+
 </style>
