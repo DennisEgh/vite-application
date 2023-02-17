@@ -57,6 +57,7 @@ nav {
   height: 50px;
   width: 300px;
   position: relative;
+  filter: invert(1);
 }
 
 </style>
