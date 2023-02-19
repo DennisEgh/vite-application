@@ -1,22 +1,77 @@
-<!DOCTYPE html>
-<html lang="sv">
-  <head>
-    <meta charset="utf-8" />
-    <title>TV Serier</title>
-    <meta content="initial-scale=1, width=device-width" name="viewport" />
-  </head>
-  <body>
-    <div id="app">
-      <div v-if="movie !== null">
-        <template v-for="movie in movies">
-          <dt>{{ movie.name }}</dt>
-          <dd>{{ movie.overview }}</dd>
-        </template>
-      </div>
+<script setup>
+  import { watch } from "vue";
+  
+  watch(
+    () => props.planetsData,
+    (value) => {
+      console.log(value.bodies);
+    }
+  );
+  
+  const props = defineProps({
+    planetsData: {
+      type: Object,
+    },
+  });
+  </script>
+  <template>
+  
+  
+    <h1 class="cards__loading" >Loading
+  
+  
+        <img class="cards__loading--spinner" src="https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/loader-icon.png" alt="">
+    </h1>
+  </template>
+  <style>
+  .planetslist {
+    width: 200px;
+    height: 300px;
+    background-color: rgb(138, 137, 137);
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+  .planet__name {
+    color: aliceblue;
+    text-transform: uppercase;
+  }
+  .card__skeleton {
+    width: 200px;
+    height: 300px;
+    background-color: rgb(138, 137, 137);
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 20px;
+  }
+  .cards__loading {
+    font-size: 36px;
+    text-align: center;
+    color: white;
+    position: relative;
+    top: 300px;
+  }
+  .cards__loading--spinner{
+      width: 32px;
+      height: 32px;
+      filter: invert(1);
+      position: relative;
+      top: 7px;
+      animation: rotation 1s infinite linear;
+  }
+  
+  </style>
+  
 
-      <p v-else>Laddar...</p>
+  <template v-if="planetsData">
+    <div v-for="value in planetsData.bodies.slice(0, 15)" class="planetslist">
+      <h1 class="planet__name">{{ value.id }}</h1>
     </div>
-    <script src="https://unpkg.com/vue@3"></script>
-    <script src="index.js"></script>
-  </body>
-</html>
+  </template>
