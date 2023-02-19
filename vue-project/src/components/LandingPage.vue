@@ -1,7 +1,6 @@
 <script setup>
 import NavigationBar from "../components/subcomponents/NavigationBar.vue";
-import axios from "axios";
-import { ref } from "vue";
+
 import { RouterLink } from "vue-router";
 
 

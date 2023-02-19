@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import LandingPageView from "../views/LandingPageView.vue";
-import Planets from "../components/Planets.vue";
+import PlanetsView from "../views/PlanetsView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -18,8 +18,9 @@ const router = createRouter({
     {
       path: "/pages/planets",
       name: "Page 2",
-      component: Planets,
+      component: PlanetsView,
     },
+  
   ],
 });
 
