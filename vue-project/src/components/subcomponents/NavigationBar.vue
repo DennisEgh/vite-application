@@ -16,7 +16,7 @@ defineProps({
     <nav>
         <div class="nav__logo--container">
             
-            <RouterLink class="nav__link" to="/Home">
+            <RouterLink class="nav__link" to="/pages/home">
           <img
             class="nav__logo"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/SpaceX_logo_black.svg/2560px-SpaceX_logo_black.svg.png"

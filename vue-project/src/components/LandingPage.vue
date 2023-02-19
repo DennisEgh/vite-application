@@ -2,18 +2,9 @@
 import NavigationBar from "../components/subcomponents/NavigationBar.vue";
 import axios from "axios";
 import { ref } from "vue";
+import { RouterLink } from "vue-router";
 
-const weathersData = ref(null);
 
-axios
-  .get(
-    "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/stockholm?unitGroup=metric&key=BS8GTQN6HJWE3LQ73JQWKDKZX&contentType=json"
-  )
-  .then((resp) => {
-    weathersData.value = resp.data;
-  });
-
-console.log(weathersData);
 </script>
 
 <template>
@@ -26,8 +17,10 @@ console.log(weathersData);
   <section id="landing">
     <header>
       <div class="header__container">
-        <h1 class="header__greeting">Join The Exploration</h1>
-        <button class="header__btn">Today</button>
+        <h1 class="header__greeting">Join The Exploration Today</h1>
+        <RouterLink class="nav__link" to="/pages/planets">
+          <button class="header__btn">Planets</button>
+        </RouterLink>
       </div>
     </header>
   </section>

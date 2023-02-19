@@ -1,21 +1,26 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import LandingPageView from '../views/LandingPageView.vue'
-
+import { createRouter, createWebHistory } from "vue-router";
+import LandingPageView from "../views/LandingPageView.vue";
+import Planets from "../components/Planets.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: "/Home",
-      name: 'Home',
-      component: LandingPageView
+      path: "/pages/home",
+      name: "page 1",
+      component: LandingPageView,
     },
     {
-      path: "/pages/:id",
-      name: 'Page 2',
-      component: "",
-    }
-  ]
-})
+      path: "/",
+      redirect: "/pages/home",
+    },
 
-export default router
+    {
+      path: "/pages/planets",
+      name: "Page 2",
+      component: Planets,
+    },
+  ],
+});
+
+export default router;
