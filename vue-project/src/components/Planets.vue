@@ -11,7 +11,6 @@ axios.get("https://api.le-systeme-solaire.net/rest/bodies/").then((resp) => {
 });
 
 
-
 console.log(planetsData);
 </script>
 <template>
@@ -19,7 +18,7 @@ console.log(planetsData);
     <NavigationBar></NavigationBar>
     <div class="search__container">
       <input
-      v-model="message"
+        v-model="inputValue"
         class="search__bar"
         type="text"
         placeholder="Search.."
